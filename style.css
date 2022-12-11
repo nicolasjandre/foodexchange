@@ -143,7 +143,7 @@ main {
 .foodToChangeSuggestions, .foodChoosenSuggestions {
     position: absolute;
     z-index: 9999;
-    height: 20rem;
+    height: 16rem;
     overflow-y: auto;
     overflow-x: hidden;
     top: 4.5rem;
@@ -198,12 +198,44 @@ input.number-input {
     outline: none;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.submenu-text {
+    font-size: 1.6rem;
+    color: #EB7B13;
+    margin-top: 26rem;
+}
+
+.submenu-text p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.submenu-text h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: #EB7B13;
+    text-shadow: 1px 1px 1px #834409;
+    line-height: 90%;
+}
+
 .exchange-focus {
     position: relative;
     display: flex;
     width: 321px;
     gap: 2rem;
-    margin-top: 30rem;
 }
 
 .exchange-focus svg:nth-child(1) {
@@ -231,7 +263,7 @@ input.number-input {
     flex: 1;
     gap: 1rem;
     color: white;
-    transition: transform .4s, filter .4s;
+    transition: transform .4s, filter .4s, background .4s;
 }
 
 div.carb:hover, div.prot:hover, div.kcal:hover {
@@ -242,8 +274,9 @@ div.carb:hover, div.prot:hover, div.kcal:hover {
 
 div.carb.active, div.prot.active, div.kcal.active {
     cursor: pointer;
-    transform: translateY(-10px);
+    transform: translateY(-1rem);
     filter: brightness(1.1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.582);
 }
 
 .exchange-focus div div.inner-circle {
@@ -277,16 +310,31 @@ main button:hover {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
+.tables {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 50rem;
+    height: 50%;
+    height: 43rem;
+    background-color: rgb(255, 255, 255);
+}
+
 caption, table {
     text-align: center;
     background-color: rgb(0, 0, 0);
-    width: 400px;
+    width: 95%;
+    max-width: 400px;
 }
 
 caption {
     border: 2px solid black;
     border-bottom: none;
-    background: var(--layout-bg)
+    background: var(--layout-bg);
+    width: 100%;
 }
 
 caption, th, td {
@@ -306,6 +354,38 @@ caption, th, td {
 .exchangeSvg svg {
     width: 5rem;
     height: 5rem;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    height: fit-content;
+    width: fit-content;
+    cursor: pointer;
+}
+
+section.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background-color: rgba(0, 0, 0, 0.432);
+    overflow: auto;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+}
+
+section.results.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 footer {

@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --circle-width: 80%;
+    --layout-bg: linear-gradient(180deg, #EB7B13 0%, rgba(236, 88, 60, 0.89) 100%);
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+.noPriorityChosenErrorModal {
+    position: sticky;
+    z-index: 99999;
+    top: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: .4s;
+    height: 0px;
+    visibility: hidden;
+}
+
+.emptyInputErrorModal {
+    position: sticky;
+    z-index: 99999;
+    top: 0;
+    width: 100%;
+    height: 0px;
+    background-color: red;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: .4s;
+    visibility: hidden;
+}
+
+.noPriorityChosenErrorModal.active {
+    visibility: visible;
+    height: 3.5rem;
+}
+
+.emptyInputErrorModal.active {
+    visibility: visible;
+    height: 3.5rem;
+}
+
+.noPriorityChosenErrorModal p {
+    padding: 1rem;
+}
+
+.poligon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    left: 0;
+    right: 0;
+    top: 10rem;
+    margin: auto;
+}
+
+.circle-content svg {
+    position: absolute;
+    width: 12rem;
+    height: 12rem;
+    transform: rotate(90deg);
+}
+
+.outer-circle {
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    background: var(--layout-bg);
+}
+
+.inner-circle {
+    position: absolute;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.circle-content h1 {
+    position: absolute;
+    z-index: 9999;
+    top: 2.5rem;
+    font-weight: 600;
+    font-size: 2.8rem;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+.circle-content p.food {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.circle-content p {
+    font-size: 1.6rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.space {
+    height: calc(19vh + 4rem);
+}
+
+.inputs {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 8rem;
+}
+
+.foodToChangeSuggestions, .foodChoosenSuggestions {
+    position: absolute;
+    z-index: 9999;
+    height: 20rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    top: 4.5rem;
+}
+
+.foodChoosenSuggestions {
+    top: 19.5rem;
+}
+
+.foodToChangeSuggestions li, .foodChoosenSuggestions li {
+    text-transform: capitalize;
+    list-style: none;
+    font-size: 1.6rem;
+    padding: 1rem;
+    text-align: center;
+    width: 22rem;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: filter .3s;
+}
+
+.foodToChangeSuggestions li:nth-child(odd), .foodChoosenSuggestions li:nth-child(odd) {
+    background: #EB7B13;
+    transform: skewX(2deg);
+}
+
+.foodToChangeSuggestions li:nth-child(even), .foodChoosenSuggestions li:nth-child(even) {
+    background: #ddd;
+    transform: skewX(-2deg);
+}
+
+.foodToChangeSuggestions li:hover, .foodChoosenSuggestions li:hover {
+    filter: brightness(1.1);
+}
+
+input.search-input {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 25rem;
+    height: 4.5rem;
+    border: 3px solid #EB7B13;
+    text-align: center;
+    text-transform: capitalize;
+    outline: none;
+}
+
+input.number-input {
+    width: 14rem;
+    height: 4.5rem;
+    border: 3px solid #EB7B13;
+    text-align: center;
+    text-transform: capitalize;
+    outline: none;
+}
+
+.exchange-focus {
+    position: relative;
+    display: flex;
+    width: 321px;
+    gap: 2rem;
+    margin-top: 30rem;
+}
+
+.exchange-focus svg:nth-child(1) {
+    position: absolute;
+    z-index: -999;
+    top: -7rem;
+}
+
+.exchange-focus svg:last-child {
+    position: absolute;
+    z-index: -999;
+    top: 7rem;
+}
+
+.exchange-focus div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--layout-bg);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 43.6364px;
+    width: 9rem;
+    height: 12.5rem;
+    flex: 1;
+    gap: 1rem;
+    color: white;
+    transition: transform .4s, filter .4s;
+}
+
+div.carb:hover, div.prot:hover, div.kcal:hover {
+    cursor: pointer;
+    transform: translateY(-10px);
+    filter: brightness(1.1);
+}
+
+div.carb.active, div.prot.active, div.kcal.active {
+    cursor: pointer;
+    transform: translateY(-10px);
+    filter: brightness(1.1);
+}
+
+.exchange-focus div div.inner-circle {
+    background: white;
+    width: 6.4rem;
+    height: 6.4rem;
+}
+
+.inner-circle img {
+    margin-top: 3rem;
+    width: 5rem;
+}
+
+main button {
+    margin: 3rem 0;
+    background: var(--layout-bg);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    width: 20rem;
+    height: 5rem;
+    font-weight: 600;
+    font-size: 34px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow .5s, filter .7s;
+}
+
+main button:hover {
+    filter: brightness(1.2);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+caption, table {
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    width: 400px;
+}
+
+caption {
+    border: 2px solid black;
+    border-bottom: none;
+    background: var(--layout-bg)
+}
+
+caption, th, td {
+    padding: 6px;
+}
+
+.firstColumn, .secondColumn, .thirdColumn {
+    background: white;
+}
+
+.exchangeSvg {
+    text-align: center;
+    width: 100%;
+    margin: 1rem 0 .5rem 0;
+}
+
+.exchangeSvg svg {
+    width: 5rem;
+    height: 5rem;
+}
+
+footer {
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 4rem;
+    border-radius: 5rem 5rem 0 0;
+    background: var(--layout-bg);
+}

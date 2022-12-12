@@ -56,35 +56,31 @@ function displayMatches() {
         deleteSecondInputLi()
         const html = sortedArray.map(food => {
             
-            return `<li ontouchstart="handleClickFirstInput(this.innerText)", onclick="handleClickFirstInput(this.innerText)">${food.description}</li>`
+            return `<li onclick="handleClickFirstInput(this.innerText)">${food.description}</li>`
         }).join('')
 
         foodToChangeInputSuggestions.innerHTML = html
     } else if (this === foodChoosenInput) {
         deleteFirstInputLi()
         const html = sortedArray.map(food => {
-            return `<li ontouchstart="handleClickSecondInput(this.innerText)", onclick="handleClickSecondInput(this.innerText)">${food.description}</li>`
+            return `<li onclick="handleClickSecondInput(this.innerText)">${food.description}</li>`
         }).join('')
 
         foodChoosenSuggestions.innerHTML = html
     }
 }
 
-
-function handleClickFirstInput(innerText, event) {
-    event = event || window.event
-    if (event.type !== 'click') event.preventDefault()
-    
+function handleClickFirstInput(innerText) {
     deleteFirstInputLi()
     deleteSecondInputLi()
 
     const foodToChangeValue = findMatches(innerText, foods)
 
     foodToChange = {
-        energy_kcal: foodToChangeValue[0].energy_kcal.toFixed(),
-        carbohydrate_g: foodToChangeValue[0].carbohydrate_g.toFixed(),
-        protein_g: foodToChangeValue[0].protein_g.toFixed(),
-        lipid_g: foodToChangeValue[0].lipid_g.toFixed(),
+        energy_kcal: typeof foodToChangeValue[0].energy_kcal === 'number' ? foodToChangeValue[0].energy_kcal.toFixed(3) : 0,
+        carbohydrate_g: typeof foodToChangeValue[0].carbohydrate_g === 'number' ? foodToChangeValue[0].carbohydrate_g.toFixed(3) : 0,
+        protein_g: typeof foodToChangeValue[0].protein_g === 'number' ? foodToChangeValue[0].protein_g.toFixed(3) : 0,
+        lipid_g: typeof foodToChangeValue[0].lipid_g === 'number' ? foodToChangeValue[0].lipid_g.toFixed(3) : 0,
         description: foodToChangeValue[0].description
     }
 
@@ -92,20 +88,17 @@ function handleClickFirstInput(innerText, event) {
     
 }
 
-function handleClickSecondInput(innerText, event) {
-    event = event || window.event
-    if (event.type !== 'click') event.preventDefault()
-    
+function handleClickSecondInput(innerText) {
     deleteFirstInputLi()
     deleteSecondInputLi()
     
     const foodChoosenValue = findMatches(innerText, foods)
-    
+
     foodChoosen = {
-        energy_kcal: foodChoosenValue[0].energy_kcal.toFixed(),
-        carbohydrate_g: foodChoosenValue[0].carbohydrate_g.toFixed(),
-        protein_g: foodChoosenValue[0].protein_g.toFixed(),
-        lipid_g: foodChoosenValue[0].lipid_g.toFixed(),
+        energy_kcal: typeof foodChoosenValue[0].energy_kcal === 'number' ? foodChoosenValue[0].energy_kcal.toFixed(3) : 0,
+        carbohydrate_g: typeof foodChoosenValue[0].carbohydrate_g === 'number' ? foodChoosenValue[0].carbohydrate_g.toFixed(3) : 0,
+        protein_g: typeof foodChoosenValue[0].protein_g === 'number' ? foodChoosenValue[0].protein_g.toFixed(3) : 0,
+        lipid_g: typeof foodChoosenValue[0].lipid_g === 'number' ? foodChoosenValue[0].lipid_g.toFixed(3) : 0,
         description: foodChoosenValue[0].description
     }
 
@@ -345,7 +338,6 @@ function removeAllTables() {
 }
 
 function closeResultModal(event) {
-    console.log('oi')
     event = event || window.event
     if (event.type !== 'click') event.preventDefault()
 

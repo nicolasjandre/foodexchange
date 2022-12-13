@@ -1,6 +1,6 @@
 export const foods = []
 
-const endpoint = 'https://raw.githubusercontent.com/danperrout/tabelataco/master/public/TACO.json'
+const endpoint = './TACO.json'
 
 async function getFoods() {
   try {

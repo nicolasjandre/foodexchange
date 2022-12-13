@@ -1,13 +1,13 @@
 import { foods } from "./get-food.js"
 import { utilities } from "./utilities.js"
 import { declared } from "./const-vars.js"
+import { exchange } from "./exchange.js"
 
 const Utilities = utilities()
+const Exchange = exchange()
 
 export function matches() {
     function findMatches(foodToMatch, foods) {
-        foodToMatch = foodToMatch
-        
         try {
             return foods.filter(food => {
                 const regex = new RegExp(foodToMatch, 'gi')
@@ -37,23 +37,30 @@ export function matches() {
         }
     
         if (this.value.length === 0 && this === declared.foodToChangeInput) return Utilities.deleteFirstInputListSuggestion()
-        if (this.value.length === 0 && this === declared.foodChoosenInput) return Utilities.deleteSecondInputListSuggdeleteFirstInputListSuggestion()
+        if (this.value.length === 0 && this === declared.foodChoosenInput) return Utilities.deleteSecondInputListSuggestion()
     
         if (this === declared.foodToChangeInput) {
             Utilities.deleteSecondInputListSuggestion()
+          
             const html = sortedArray.map(food => {
-                
-                return `<li onclick="handleClickFirstInputListSuggestions(this.innerText)">${food.description}</li>`
-            }).join('')
-    
-            declared.foodToChangeInputSuggestions.innerHTML = html
+              const li = document.createElement('li')
+              li.innerText = food.description
+              li.addEventListener('click', event => Exchange.handleClickFirstInputListSuggestions(event.target.innerText))
+              
+              return li
+            })
+            declared.foodToChangeInputSuggestions.replaceChildren(...html)
         } else if (this === declared.foodChoosenInput) {
             Utilities.deleteFirstInputListSuggestion()
+
             const html = sortedArray.map(food => {
-                return `<li onclick="handleClickSecondInputListSuggestions(this.innerText)">${food.description}</li>`
-            }).join('')
-    
-            declared.foodChoosenSuggestions.innerHTML = html
+                const li = document.createElement('li')
+                li.innerText = food.description
+                li.addEventListener('click', event => Exchange.handleClickSecondInputListSuggestions(event.target.innerText))
+
+                return li
+            })
+            declared.foodChoosenSuggestions.replaceChildren(...html)
         }
     }
 

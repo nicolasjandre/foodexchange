@@ -12,13 +12,10 @@ export function utilities() {
 
         declared.button.addEventListener('click', Exchange.handleClickExchangeButton)
         declared.button.addEventListener('touchstart', Exchange.handleClickExchangeButton)
-
-        declared.foodChoosenInput.addEventListener('change', Matches.displayMatches)
+        
         declared.foodChoosenInput.addEventListener('keyup', Matches.displayMatches)
-        declared.foodToChangeInput.addEventListener('change', Matches.displayMatches)
+        
         declared.foodToChangeInput.addEventListener('keyup', Matches.displayMatches)
-        window.handleClickFirstInputListSuggestions = (innerText) => Exchange.handleClickFirstInputListSuggestions(innerText)
-        window.handleClickSecondInputListSuggestions = (innerText) => Exchange.handleClickSecondInputListSuggestions(innerText)
     
         declared.foodToChangeInput.addEventListener('change', utilities.deleteSecondInputListSuggestion)
         declared.foodToChangeInput.addEventListener('keyup', utilities.deleteSecondInputListSuggestion)
@@ -46,6 +43,7 @@ export function utilities() {
         if (event.type !== 'click') event.preventDefault()
     
         declared.sectionResults.classList.remove('active')
+        document.querySelector('body').style.overflow = "auto"
     }
 
     function noPriorityChosenErrorModal() {

@@ -109,6 +109,8 @@ export function exchange() {
         }
     }
     function displayExchangeResult(food1, food2, food1Grams, food2Grams) {
+        document.querySelector('body').style.overflow = "hidden"
+        
         declared.sectionResults.classList.add('active');
     
         declared.sectionResults.innerHTML = `

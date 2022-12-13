@@ -17,7 +17,7 @@ body {
 }
 
 .noPriorityChosenErrorModal {
-    position: sticky;
+    position: fixed;
     z-index: 99999;
     top: 0;
     width: 100%;
@@ -33,7 +33,7 @@ body {
 }
 
 .emptyInputErrorModal {
-    position: sticky;
+    position: fixed;
     z-index: 99999;
     top: 0;
     width: 100%;
@@ -318,9 +318,9 @@ main button:hover {
     align-items: center;
     width: 90%;
     max-width: 50rem;
-    height: 50%;
     height: 43rem;
     background-color: rgb(255, 255, 255);
+    border-radius: 8px;
 }
 
 caption, table {
@@ -335,6 +335,7 @@ caption {
     border-bottom: none;
     background: var(--layout-bg);
     width: 100%;
+    font-weight: 600;
 }
 
 caption, th, td {

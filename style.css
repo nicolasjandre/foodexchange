@@ -164,7 +164,7 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-    margin-top: 8rem;
+    margin-top: 7.5rem;
 }
 
 .foodToChangeSuggestions, .foodChoosenSuggestions {
@@ -242,7 +242,7 @@ input[type=number] {
 .submenu-text {
     font-size: 1.6rem;
     color: var(--layout-color-1);
-    margin-top: 37rem;
+    margin-top: 36rem;
 }
 
 .submenu-text p {
@@ -429,4 +429,11 @@ footer {
     height: 4rem;
     border-radius: 5rem 5rem 0 0;
     background: var(--layout-bg);
+}
+
+@media (min-height: 951px) {
+    footer {
+        position: absolute;
+        bottom: 0;
+    }
 }

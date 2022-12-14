@@ -7,13 +7,23 @@
 :root {
     font-size: 62.5%;
     --circle-width: 80%;
-    --layout-bg: linear-gradient(180deg, #EB7B13 0%, rgba(236, 88, 60, 0.89) 100%);
+    --layout-bg: linear-gradient(180deg, #207f16 0%, rgb(8, 83, 5) 100%);
+    --layout-color-1: #207f16;
+    --layout-color-2: #085305;
 }
 
 body {
     font-size: 1.6rem;
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
+}
+
+svg linearGradient stop:nth-child(1) {
+    color: var(--layout-color-1);
+}
+
+svg linearGradient stop:nth-child(2) {
+    color: var(--layout-color-2);
 }
 
 .sr-only {
@@ -89,7 +99,7 @@ body {
     width: fit-content;
     left: 0;
     right: 0;
-    top: 10rem;
+    top: 3rem;
     margin: auto;
 }
 
@@ -176,15 +186,17 @@ main {
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     transition: filter .3s;
+    color: white;
 }
 
 .foodToChangeSuggestions li:nth-child(odd), .foodChoosenSuggestions li:nth-child(odd) {
-    background: #EB7B13;
+    background: var(--layout-color-1);
     transform: skewX(2deg);
 }
 
 .foodToChangeSuggestions li:nth-child(even), .foodChoosenSuggestions li:nth-child(even) {
-    background: #ddd;
+    background-color: #ddd;
+    color: black;
     transform: skewX(-2deg);
 }
 
@@ -196,7 +208,7 @@ input.search-input {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 25rem;
     height: 4.5rem;
-    border: 3px solid #EB7B13;
+    border: 3px solid var(--layout-color-1);
     text-align: center;
     text-transform: capitalize;
     outline: none;
@@ -205,7 +217,7 @@ input.search-input {
 input.number-input {
     width: 14rem;
     height: 4.5rem;
-    border: 3px solid #EB7B13;
+    border: 3px solid var(--layout-color-1);
     text-align: center;
     text-transform: capitalize;
     outline: none;
@@ -225,8 +237,8 @@ input[type=number] {
 
 .submenu-text {
     font-size: 1.6rem;
-    color: #EB7B13;
-    margin-top: 26rem;
+    color: var(--layout-color-1);
+    margin-top: 18rem;
 }
 
 .submenu-text p {
@@ -239,8 +251,8 @@ input[type=number] {
     text-align: center;
     margin-bottom: 1rem;
     font-size: 3rem;
-    color: #EB7B13;
-    text-shadow: 1px 1px 1px #834409;
+    color: var(--layout-color-1);
+    text-shadow: 1px 1px 3px var(--layout-color-2);
     line-height: 90%;
 }
 
@@ -403,7 +415,6 @@ section.results.active {
 }
 
 footer {
-    margin-top: 3rem;
     font-size: 1.2rem;
     display: flex;
     justify-content: center;

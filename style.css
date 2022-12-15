@@ -250,13 +250,13 @@ input[type=number] {
     margin-top: 36rem;
 }
 
-.submenu-text p {
+.submenu-text p:first-child {
     font-size: 1.2rem;
     font-weight: 600;
     text-align: center;
 }
 
-.submenu-text h3 {
+.submenu-text p:last-child {
     text-align: center;
     margin-bottom: 1rem;
     font-size: 3rem;
@@ -322,7 +322,6 @@ div.carb.active, div.prot.active, div.kcal.active {
 
 .inner-circle img {
     margin-top: 3rem;
-    width: 5rem;
 }
 
 main button {
@@ -355,6 +354,7 @@ main button:hover {
     height: 43rem;
     background-color: rgb(255, 255, 255);
     border-radius: 8px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.7);
 }
 
 caption, table {

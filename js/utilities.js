@@ -11,7 +11,7 @@ export function utilities() {
         removeAllTables()
 
         declared.button.addEventListener('click', Exchange.handleClickExchangeButton)
-        declared.button.addEventListener('touchstart', Exchange.handleClickExchangeButton)
+        declared.button.addEventListener('touchstart', Exchange.handleClickExchangeButton, {passive: true})
         
         declared.foodChoosenInput.addEventListener('keyup', Matches.displayMatches)
         
@@ -29,9 +29,9 @@ export function utilities() {
         declared.focusCarbDiv.addEventListener('click', Exchange.handleClickFocusCarb)
         declared.focusProtDiv.addEventListener('click', Exchange.handleClickFocusProt)
         declared.focusKcalDiv.addEventListener('click', Exchange.handleClickFocusKcal)
-        declared.focusCarbDiv.addEventListener('touchstart', Exchange.handleClickFocusCarb)
-        declared.focusProtDiv.addEventListener('touchstart', Exchange.handleClickFocusProt)
-        declared.focusKcalDiv.addEventListener('touchstart', Exchange.handleClickFocusKcal)
+        declared.focusCarbDiv.addEventListener('touchstart', Exchange.handleClickFocusCarb, {passive: true})
+        declared.focusProtDiv.addEventListener('touchstart', Exchange.handleClickFocusProt, {passive: true})
+        declared.focusKcalDiv.addEventListener('touchstart', Exchange.handleClickFocusKcal, {passive: true})
     }
     
     function removeAllTables() {

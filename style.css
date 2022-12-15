@@ -321,6 +321,8 @@ div.carb.active, div.prot.active, div.kcal.active {
 }
 
 .inner-circle img {
+    width: 5rem;
+    height: 5rem;
     margin-top: 3rem;
 }
 

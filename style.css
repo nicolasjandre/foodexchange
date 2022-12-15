@@ -176,7 +176,7 @@ main {
 .foodToChangeSuggestions, .foodChoosenSuggestions {
     position: absolute;
     z-index: 9999;
-    height: 16rem;
+    max-height: 14rem;
     overflow-y: auto;
     overflow-x: hidden;
     top: 4.5rem;

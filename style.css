@@ -14,11 +14,10 @@
 }
 
 .overflow-x-hidden-wrapper {
-    width: 100%;
+    width: 100vw;
     position: relative;
     min-height: 100vh;
     overflow-x: hidden;
-    border-bottom: 4px solid var(--submenu-hover-active);
 }
 
 html, body {

@@ -13,11 +13,18 @@
     --submenu-hover-active: #208f1f;
 }
 
-body {
-    font-size: 1.6rem;
-    font-family: 'Inter', sans-serif;
+.overflow-x-hidden-wrapper {
+    width: 100%;
+    position: relative;
     min-height: 100vh;
     overflow-x: hidden;
+    border-bottom: 4px solid var(--submenu-hover-active);
+}
+
+html, body {
+    font-size: 1.6rem;
+    font-family: 'Inter', sans-serif;
+    max-height: 100vh;
 }
 
 svg linearGradient stop:nth-child(1) {
@@ -431,7 +438,7 @@ footer {
     background: var(--layout-bg);
 }
 
-@media (min-height: 951px) {
+@media (min-height: 950px) {
     footer {
         position: absolute;
         bottom: 0;

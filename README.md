@@ -8,7 +8,7 @@ Cursei dois anos de nutrição e sempre fui adepto da dieta flexível, estilo di
 <br>
 <p align="center">Este projeto veio pra resolver um problema que sempre tive: ter de consultar sites de tabela nutricional e, manualmente e um por um, consultar e recalcular quantas gramas de determinado alimento poderia comer em relação a outro.</p>
 <p align="center">Aqui resolvo esse problema! Escolha o primeiro alimento que deseja trocar por outro, as gramas do mesmo, o alimento que quer em troca e tenha ta tabela com os mais importantes macro-nutrientes de cada em sua mão. Você ainda tem a opção de decidir se deseja priorizar a conversão para bater a proteína, o carboidrato ou as calorias. Irado, não?!</p>
-<p align="center">Outro detalhe bacana que me fez AMAR produzir esse queridinho: eu quem fiz o UX. E particularmente, achei lindo!</p>
+<p align="center">Outro detalhe bacana que me fez AMAR produzir esse queridinho: eu quem fiz o UI. E particularmente, achei muito bacana!</p>
 
 <p align="center">Muito obrigado por visitar esta página e deixe seu fav. :)</p>
 
